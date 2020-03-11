@@ -18,7 +18,7 @@ services:
     depends_on: { master: { condition: service_healthy } }
   ds:
     container_name: ds
-    image: 'onlyoffice/documentserver-ie:latest'
+    image: '${COMPANY_NAME:-onlyoffice}/${DS_CONTAINER_NAME:-"documentserver-ie:latest"}'
     ports: 
       - '80:80'
     environment:
